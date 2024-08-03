@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import sys
 
 # import pyparsing - available if you need it!
