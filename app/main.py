@@ -13,7 +13,11 @@ def match_pattern(input_line, pattern):
     elif pattern == "\w":
         return any(c.isalnum() for c in input_line)
     elif len(pattern) > 1:
-        return all(c in pattern for c in input_line) if "^" not in pattern else not(all(c in pattern for c in input_line))
+        return (
+            all(c in pattern for c in input_line)
+            if "^" not in pattern
+            else not(all(c in pattern for c in input_line))
+        )
     else:
         raise RuntimeError(f"Unhandled pattern: {pattern}")
 
